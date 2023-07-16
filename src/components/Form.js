@@ -7,7 +7,9 @@ function Form(params) {
         setName(e.target.value)
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setName("");
         console.log(name);
     }
 
@@ -16,14 +18,21 @@ function Form(params) {
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <div className="field">
-                        <label>Name</label>
-                        <input type="text" placeholder="Name" name="name" onChange={handleChange}/>
+                        <label htmlFor="name">Name</label>
+                        <input
+                            id="name" 
+                            type="text" 
+                            placeholder="Name" 
+                            name="name"
+                            value={name} 
+                            onChange={handleChange}
+                        />
                     </div>
-                    <button type="submit">Submit</button>
+                    <button disabled={!name} type="submit">Submit</button>
                 </fieldset>
             </form>
         </div>
     )
 }
 
-export {Form}
+export {Form};
