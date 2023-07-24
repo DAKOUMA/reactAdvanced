@@ -6,6 +6,11 @@ import { Form } from "./components/Form";
 import { FormRange } from "./components/FormRange";
 import { Routes, Route, Link } from "react-router-dom";
 import FormFinal from "./components/FormFinal";
+import { UsestateHook } from "./components/UsestateHook";
+import { UseEffect } from "./components/UseEffect";
+import { Fetching } from "./components/Fetching";
+import { Fetching1 } from "./components/Fetching1";
+import { UseReducer } from "./components/UseReducer";
 
 
 function App() {
@@ -41,12 +46,17 @@ function App() {
 
   return (
     <div>
-      <nav>
+      <nav className="flex w-screen justify-around mb-20">
         <Link to="/form-range" className="nav-item">FormRange</Link>
         <Link to="/form" className="nav-item">Form</Link>
         <Link to="/list" className="nav-item">List</Link>
         <Link to="/todo" className="nav-item">Todo</Link>
         <Link to="/form-final" className="nav-item">FormFinal</Link>
+        <Link to="/usestate-hook" className="nav-item">Usestate Hook</Link>
+        <Link to="/useEffect" className="nav-item">UseEffect</Link>
+        <Link to="/fetching" className="nav-item">Fetching</Link>
+        <Link to="/fetching1" className="nav-item">Fetching1</Link>
+        <Link to="/useReducer" className="nav-item">UseReducer</Link>
       </nav>
       <Routes>
         <Route path="/form-range" element={<FormRange />}/>
@@ -54,6 +64,12 @@ function App() {
         <Route path="/list" element={<List/>}/>
         <Route path="/todo" element={<TOodo/>}/>
         <Route path="/form-final" element={<FormFinal/>}/>
+        <Route path="/usestate-hook" element={<UsestateHook/>}/>
+        <Route path="/useEffect" element={<UseEffect/>}/>
+        <Route path="/fetching" element={<Fetching/>}/>
+        <Route path="/fetching1" element={<Fetching1/>}/>
+        <Route path="/useReducer" element={<UseReducer/>}/>
+        
       </Routes>
       
       
